@@ -1,0 +1,15 @@
+﻿Enable-Migrations -ContextTypeName DataBaseContext -MigrationsDirectory Migrations\CourseMighrations
+
+Add-Migration -ConfigurationTypeName TestDatabase_CoreFirst.Migrations.CourseMighrations.Configuration "IntialCreate"
+
+Update-Database -ConfigurationTypeName TestDatabase_CoreFirst.Migrations.CourseMighrations.Configuration
+
+
+
+====================== Aplication DB Context ======================
+
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity	
+
+Add-Migration -ConfigurationTypeName TestDatabase_CoreFirst.Migrations.Identity.Configuration "IntialAdminDB"
+
+Update-Database -ConfigurationTypeName TestDatabase_CoreFirst.Migrations.Identity.Configuration
